@@ -9,4 +9,8 @@ public class Parcel {
         this.depthInCm = depthInCm;
     }
 
+    public static Parcel createParcel(int heightInCm, int weightInCm, int depthInCm) {
+        return new Parcel(heightInCm, weightInCm, depthInCm);
+    }
+
 }

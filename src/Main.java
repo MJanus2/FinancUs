@@ -20,14 +20,13 @@ public class Main {
             if (chooseIdOfOption == 1) {
                 String[] parcelLockerData = new String[2];
                 for (int i = 0; i < 100; i++) {
-                    if(array[i] == null) {
+                    if (array[i] == null) {
                         System.out.println("Podaj miasto w jakim znajduje się paczkomat" +
                                 "(zamiast spacji użyj myślnika): ");
                         String cityOfParcelLocker = scanner.next();
                         System.out.println("Podaj ulicę na jakiej znajduje się paczkomat" +
                                 "(zamiast spacji użyj myślnika): ");
                         String streetOfParcelLocker = scanner.next();
-                        ;
                         System.out.println("Podaj ID paczkomatu: ");
                         int numberOfParcelLocker = scanner.nextInt();
                         array[i] = ParcelLocker.createParcelLocker(cityOfParcelLocker,
@@ -46,44 +45,36 @@ public class Main {
                 for (int i = 0; i < array.length; i++) {
                     try {
                         if (parcelLockerIdToDelete == array[i].getNumberOfParcelLocker()) {
-                            System.out.println("Usunięto paczkomat od ID: " +
+                            System.out.println("Usunięto paczkomat o ID: " +
                                     array[i].getNumberOfParcelLocker());
                             array[i] = null;
                         }
                     } catch (NullPointerException e) {
                     }
                 }
-
-            } if (chooseIdOfOption == 3) {
-                for (int i = 0; i < 100; i++){
-                    if (array[i] != null){
+            }
+            if (chooseIdOfOption == 3) {
+                for (int i = 0; i < 100; i++) {
+                    if (array[i] != null) {
                         System.out.print("Paczkomat w " + array[i].getCityOfParcelLocker()
                                 + " przy ulicy " + array[i].getStreetOfParcelLocker()
                                 + " o ID: " + array[i].getNumberOfParcelLocker());
                         System.out.println();
                     }
                 }
-            }  {
+            }
+            {
                 String choosenCiti = scanner.next();
                 System.out.print("ID: ");
-                for (int i = 0; i < 100; i++){
-                    if (choosenCiti.equals(array[i].getCityOfParcelLocker())){
-                        System.out.println(array[i].getNumberOfParcelLocker()+ ", ");
+                for (int i = 0; i < 100; i++) {
+                    if (choosenCiti.equals(array[i].getCityOfParcelLocker())) {
+                        System.out.println(array[i].getNumberOfParcelLocker() + ", ");
                     }
                 }
-            }if (chooseIdOfOption == 5){
-
             }
-
-
+            if (chooseIdOfOption == 5) {
+            }
         }
-
-
     }
-
-
-
-//* wyświetlanie paczek przez paczkomat
-//* aktualizacja szczegółów paczek
 }
 

@@ -3,11 +3,13 @@ private String cityOfParcelLocker;
 private String streetOfParcelLocker;
 private int numberOfParcelLocker;
 
+
     public ParcelLocker(String cityOfParcelLocker, String streetOfParcelLocker,
-                        int numberOfParcelLocker, Parcel... parcels) {
+                        int numberOfParcelLocker, Parcel parcel) {
         this.cityOfParcelLocker = cityOfParcelLocker;
         this.streetOfParcelLocker = streetOfParcelLocker;
         this.numberOfParcelLocker = numberOfParcelLocker;
+
     }
     public ParcelLocker(String cityOfParcelLocker, String streetOfParcelLocker,
                         int numberOfParcelLocker) {
@@ -20,6 +22,12 @@ private int numberOfParcelLocker;
                              int numberOfParcelLocker){
         return new ParcelLocker(cityOfParcelLocker, streetOfParcelLocker, numberOfParcelLocker);
     }
+
+    public static Parcel createParcel(int heightInCm, int weightInCm, int depthInCm){
+        return new Parcel(heightInCm, weightInCm, depthInCm);
+    }
+
+
 
     public String getCityOfParcelLocker() {
         return cityOfParcelLocker;
@@ -40,6 +48,8 @@ private int numberOfParcelLocker;
     public void setStreetOfParcelLocker(String streetOfParcelLocker) {
         this.streetOfParcelLocker = streetOfParcelLocker;
     }
+
+
 
     public void setNumberOfParcelLocker(int numberOfParcelLocker) {
         this.numberOfParcelLocker = numberOfParcelLocker;
