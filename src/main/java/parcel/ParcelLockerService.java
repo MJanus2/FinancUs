@@ -20,4 +20,8 @@ public class ParcelLockerService {
     public void deleteParcelLocker(int id) {
         parcelLockerCollection.deleteParcelLocker(id);
     }
+
+    void setParcelLockerCollection(ParcelLockerCollection parcelLockerCollection) {
+        this.parcelLockerCollection = parcelLockerCollection;
+    }
 }
