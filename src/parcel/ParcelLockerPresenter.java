@@ -11,10 +11,12 @@ public class ParcelLockerPresenter {
             System.out.println("Wybierz opcję: ");
             System.out.println("1. Wprowadź paczkomat");
             System.out.println("2. Wyświetl paczkomaty");
+            System.out.println("3. Usuń paczkomat");
             int option = scanner.nextInt();
             switch (option) {
                 case 1: insertParcelLocker(); break;
                 case 2: showParcelLockers(); break;
+                case 3: deleteParcelLocker(); break;
             }
         } while (true);
     }
@@ -48,5 +50,12 @@ public class ParcelLockerPresenter {
                         parcelLocker.getCapacity());
             }
         }
+    }
+
+    public void deleteParcelLocker(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Podaj id paczkomatu do usunięcia: ");
+        int id = scanner.nextInt();
+        parcelLockerService.deleteParcelLocker(id);
     }
 }
