@@ -36,7 +36,12 @@ public class ParcelLockerPresenter {
         System.out.println("Podaj ładowność: ");
         int capacity = scanner.nextInt();
 
-        parcelLockerService.addParcelLocker(id, name, address, capacity);
+        if(parcelLockerService.addParcelLocker(id, name, address, capacity)){
+            System.out.println("Dodano paczkomat");
+        } else {
+            System.out.println("Podano błędne dane");
+            insertParcelLocker();
+        }
     }
 
     public void showParcelLockers() {

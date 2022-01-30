@@ -25,7 +25,7 @@ public class ParcelLockerValidator {
             isNameCorrect = false;
         }
 
-        Pattern patternAddress = Pattern.compile("([.]+),([.]+),([1-9]{2})-([1-9]{3})");
+        Pattern patternAddress = Pattern.compile("([a-zA-Z0-9]+),([a-zA-Z]+),([0-9]{2})-([0-9]{3})");
         Matcher matcherAddress = patternAddress.matcher(address);
         matcherAddress.matches();
 
