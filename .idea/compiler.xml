@@ -6,11 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="FinancUs" />
         <module name="Parcel-Locker-27-01-2022-(Java)" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="FinancUs" target="17" />
       <module name="Parcel-Locker-27-01-2022-(Java)" target="17" />
+      <module name="ParcelLocker" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
