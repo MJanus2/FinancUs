@@ -17,18 +17,4 @@ protected double area;
     public int getId() {
         return id;
     }
-
-    public String getCity() {
-        return city;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public double getArea() {
-        return area;
-    }
-
-
 }

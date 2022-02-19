@@ -44,7 +44,7 @@ public class RealEstatePresenter {
         System.out.println("Podaj piętro: ");
         int floor = scanner.nextInt();
 
-        System.out.println("Podaj metraż: ");
+        System.out.println("Czy jest parking (y/n): ");
         String ifParking = scanner.next();
         boolean parking;
         if (ifParking.equals("y")){

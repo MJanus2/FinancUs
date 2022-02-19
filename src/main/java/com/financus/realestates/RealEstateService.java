@@ -23,7 +23,5 @@ public class RealEstateService {
         apartmentCollection.deleteRealEstate(id);
     }
 
-    void setRealEstateCollection(ApartmentCollection apartmentCollection) {
-        this.apartmentCollection = apartmentCollection;
-    }
+
 }
