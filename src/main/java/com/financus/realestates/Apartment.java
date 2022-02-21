@@ -5,6 +5,8 @@ public class Apartment extends RealEstate {
     private final int floor;
     private boolean parking;
 
+
+
     public Apartment(int id, String city, String street, double area,
                      int floor, boolean parking) {
         super(id, city, street, area);
@@ -25,13 +27,6 @@ public class Apartment extends RealEstate {
                 '}';
     }
 
-    public boolean isParking() {
-        return parking;
-    }
-
-    public int getFloor() {
-        return floor;
-    }
 
     public int getId() {
         return id;

@@ -3,7 +3,7 @@ package com.financus.realestates;
 import java.util.Scanner;
 
 public class RealEstatePresenter {
-    private RealEstateService realEstateService = new RealEstateService();
+    private RealEstateService.ApartmentService apartmentService = new RealEstateService.ApartmentService();
     public void showMenu() {
         Scanner scanner = new Scanner(System.in);
         do {
@@ -53,7 +53,7 @@ public class RealEstatePresenter {
             parking = false;
         }
 
-        if(realEstateService.addRealEstate(id, city, street, area, floor, parking)){
+        if(apartmentService.addRealEstate(id, city, street, area, floor, parking)){
             System.out.println("Dodano nieruchomość");
         } else {
             System.out.println("Podano błędne dane");
@@ -64,7 +64,7 @@ public class RealEstatePresenter {
 
     public void showRealEstate() {
         System.out.println("Dostępne paczkomaty: ");
-        for (Apartment apartment : realEstateService.getRealEstate()) {
+        for (Apartment apartment : apartmentService.getRealEstate()) {
             if (apartment != null) {
                 System.out.printf(apartment.toString());
             }
@@ -75,6 +75,6 @@ public class RealEstatePresenter {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj id paczkomatu do usunięcia: ");
         int id = scanner.nextInt();
-        realEstateService.deleteRealEstate(id);
+        apartmentService.deleteRealEstate(id);
     }
 }
