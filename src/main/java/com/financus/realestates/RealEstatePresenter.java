@@ -3,9 +3,10 @@ package com.financus.realestates;
 import java.util.Scanner;
 
 public class RealEstatePresenter {
-    private RealEstateService.ApartmentService apartmentService = new RealEstateService.ApartmentService();
+    private final RealEstateService.ApartmentService apartmentService = new RealEstateService.ApartmentService();
     public void showMenu() {
         Scanner scanner = new Scanner(System.in);
+        boolean closeMenu = true;
         do {
             System.out.println("Wybierz opcję: ");
             System.out.println("1. Wprowadź apartament");
@@ -13,24 +14,18 @@ public class RealEstatePresenter {
             System.out.println("3. Usuń apartament");
             int option = scanner.nextInt();
             switch (option) {
-                case 1:
-                    insertRealEstate();
-                    break;
-                case 2:
-                    showRealEstate();
-                    break;
-                case 3:
-                    deleteRealEstate();
-                    break;
+                case 1 -> insertRealEstate();
+                case 2 -> showRealEstate();
+                case 3 -> deleteRealEstate();
+                case 4 -> closeMenu = false;
             }
-        } while (true);
+        } while (closeMenu);
     }
 
     public void insertRealEstate() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj id: ");
         int id = scanner.nextInt();
-        scanner.nextLine();
 
         System.out.println("Podaj miasto: ");
         String city = scanner.nextLine();
@@ -47,11 +42,13 @@ public class RealEstatePresenter {
         System.out.println("Czy jest parking (y/n): ");
         String ifParking = scanner.next();
         boolean parking;
-        if (ifParking.equals("y")){
+        if (RealEstateValidator.isParkingValid(ifParking) && ifParking.equals("y")){
             parking = true;
         } else {
+            System.out.println("Podaj y lub n, inne wartości są nieprawidłowe");
             parking = false;
         }
+
 
         if(apartmentService.addRealEstate(id, city, street, area, floor, parking)){
             System.out.println("Dodano nieruchomość");
@@ -63,17 +60,17 @@ public class RealEstatePresenter {
     }
 
     public void showRealEstate() {
-        System.out.println("Dostępne paczkomaty: ");
+        System.out.println("Posiadane nieruchomości: ");
         for (Apartment apartment : apartmentService.getRealEstate()) {
             if (apartment != null) {
-                System.out.printf(apartment.toString());
+                System.out.print(apartment);
             }
         }
     }
 
     public void deleteRealEstate() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Podaj id paczkomatu do usunięcia: ");
+        System.out.println("Podaj id nieruchomości do usunięcia: ");
         int id = scanner.nextInt();
         apartmentService.deleteRealEstate(id);
     }

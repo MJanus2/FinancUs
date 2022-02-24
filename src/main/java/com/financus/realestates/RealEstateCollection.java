@@ -12,7 +12,6 @@ interface RealEstateCollection<T> {
 class ApartmentCollection implements RealEstateCollection<Apartment> {
     ArrayList<Apartment> apartments = new ArrayList<>();
 
-
     @Override
     public void addRealEstateToArrayList(Apartment apartment) {
         apartments.add(apartment);

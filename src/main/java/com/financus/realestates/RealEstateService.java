@@ -14,7 +14,9 @@ interface RealEstateService<T> {
         @Override
         public boolean addRealEstate(int id, String city, String street, double area,
                                      int floor, boolean parking) {
-            boolean isValid = true;
+            boolean isValid = RealEstateValidator.isIdValid(id) && RealEstateValidator.isCityValid(city)
+                    & RealEstateValidator.isStreetValid(street) && RealEstateValidator.isAreaValid(area)
+                    & RealEstateValidator.isFloorValid(floor);
             if (isValid) {
                 Apartment apartment = new Apartment(id, city, street, area,
                         floor, parking);
