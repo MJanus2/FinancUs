@@ -11,20 +11,22 @@ public class RealEstateValidator {
 
 
     public static boolean isCityValid(String city){
-        Pattern patternCity = Pattern.compile("[A-Z]{1}[a-z]");
-        Matcher matcherCity = patternCity.matcher(city);
-        return matcherCity.matches();
+        Pattern patternCity = Pattern.compile("[A-ZŻŹĆĄŚĘŁÓŃ]{1}[a-zzżźćńółęąś]+");
+        Matcher matcherCityFirst = patternCity.matcher(city);
+        patternCity = Pattern.compile("[A-ZŻŹĆĄŚĘŁÓŃ]{1}[a-zzżźćńółęąś]+\\s[A-ZŻŹĆĄŚĘŁÓŃ]{1}[a-zzżźćńółęąś]+");
+        Matcher matcherStreetSecond = patternCity.matcher(city);
+        return matcherCityFirst.matches() || matcherStreetSecond.matches();
     }
 
     public static boolean isStreetValid(String street){
         boolean isStreetValid;
-        Pattern patternStreet = Pattern.compile("[A-Z]{1}[a-z]+");
+        Pattern patternStreet = Pattern.compile("[A-ZŻŹĆĄŚĘŁÓŃ]{1}[a-zzżźćńółęąś]+");
         Matcher matcherStreetFirst = patternStreet.matcher(street);
-        patternStreet = Pattern.compile("[A-Z]{1}[a-z]+ [a-zA-Z]+");
+        patternStreet = Pattern.compile("[A-ZŻŹĆĄŚĘŁÓŃ]{1}[a-zzżźćńółęąś]+ [a-zzżźćńółęąśA-Z]+");
         Matcher matcherStreetSecond = patternStreet.matcher(street);
-        patternStreet = Pattern.compile("[1-9]+ [a-zA-Z]+");
+        patternStreet = Pattern.compile("[1-9]+ [a-zzżźćńółęąśA-ZŻŹĆĄŚĘŁÓŃ]+");
         Matcher matcherStreetSThird = patternStreet.matcher(street);
-        patternStreet = Pattern.compile("[A-Z]{1}[a-z]+ [1-9]+ [a-zA-Z]+");
+        patternStreet = Pattern.compile("[A-ZŻŹĆĄŚĘŁÓŃ]{1}[a-zzżźćńółęąś]+ [1-9]+ [a-zzżźćńółęąśA-ZŻŹĆĄŚĘŁÓŃ]+");
         Matcher matcherStreetFourth = patternStreet.matcher(street);
         isStreetValid = matcherStreetFirst.matches() || matcherStreetSecond.matches()
                 || matcherStreetSThird.matches() || matcherStreetFourth.matches();
