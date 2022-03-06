@@ -28,6 +28,8 @@ class Apartment extends RealEstate {
         this.parking = parking;
     }
 
+
+
     @Override
     public String toString() {
         return "Apartment{" +
