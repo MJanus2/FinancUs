@@ -41,3 +41,25 @@ class Apartment extends RealEstate {
     }
 }
 
+class House extends RealEstate {
+
+    double gardenArea;
+    public House(int id, String city, String street, double area, double gardenArea) {
+        super(id, city, street, area);
+        this.gardenArea = gardenArea;
+    }
+
+
+    @Override
+    public String toString() {
+        return "House{" +
+                "id=" + id +
+                ", city='" + city + '\'' +
+                ", street='" + street + '\'' +
+                ", area=" + area +
+                ", gardenArea=" + gardenArea +
+                '}';
+    }
+
+
+}

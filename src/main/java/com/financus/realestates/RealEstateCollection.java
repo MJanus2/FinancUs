@@ -21,9 +21,28 @@ class ApartmentCollection implements RealEstateCollection<Apartment> {
     public ArrayList<Apartment> getRealEstate() {
         return apartments;
     }
+
     @Override
     public void deleteRealEstate(int id) {
         apartments.removeIf(apartment -> apartment.getId() == id);
     }
+}
 
+class HouseCollection implements RealEstateCollection<House> {
+    ArrayList<House> houses = new ArrayList<>();
+
+    @Override
+    public void addRealEstateToArrayList(House house) {
+        houses.add(house);
+    }
+
+    @Override
+    public ArrayList<House> getRealEstate() {
+        return houses;
+    }
+
+    @Override
+    public void deleteRealEstate(int id) {
+        houses.removeIf(apartment -> apartment.getId() == id);
+    }
 }

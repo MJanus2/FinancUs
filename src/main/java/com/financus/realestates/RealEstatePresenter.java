@@ -3,7 +3,7 @@ package com.financus.realestates;
 import java.util.Scanner;
 
 public class RealEstatePresenter {
-    private final RealEstateService.ApartmentService apartmentService = new RealEstateService.ApartmentService();
+    private final RealEstateService realEstateService = new RealEstateService();
     public void showMenu() {
         Scanner scanner = new Scanner(System.in);
         boolean closeMenu = true;
@@ -50,7 +50,7 @@ public class RealEstatePresenter {
         }
 
 
-        if(apartmentService.addRealEstate(id, city, street, area, floor, parking)){
+        if(realEstateService.addRealEstate(id, city, street, area, floor, parking)){
             System.out.println("Dodano nieruchomość");
         } else {
             System.out.println("Podano błędne dane");
@@ -61,7 +61,7 @@ public class RealEstatePresenter {
 
     public void showRealEstate() {
         System.out.println("Posiadane nieruchomości: ");
-        for (Apartment apartment : apartmentService.getRealEstate()) {
+        for (Apartment apartment : realEstateService.getRealEstate()) {
             if (apartment != null) {
                 System.out.print(apartment);
             }
@@ -72,6 +72,6 @@ public class RealEstatePresenter {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj id nieruchomości do usunięcia: ");
         int id = scanner.nextInt();
-        apartmentService.deleteRealEstate(id);
+        realEstateService.deleteRealEstate(id);
     }
 }
