@@ -18,9 +18,10 @@ class RealEstateCollectionTest {
         String city = "Warszawa";
         String street = "Złota";
         double area = 59.5;
+        int monthlyCost = 1000;
         int floor = 6;
         boolean parking = true;
-        Apartment apartment = new Apartment(id, city, street, area, floor, parking);
+        Apartment apartment = new Apartment(id, city, street, area, monthlyCost, floor, parking);
 
         //when
         apartmentCollection.addRealEstateToArrayList(apartment);
@@ -36,9 +37,10 @@ class RealEstateCollectionTest {
         String city = "Warszawa";
         String street = "Złota";
         double area = 59.5;
+        int monthlyCost = 1000;
         int floor = 6;
         boolean parking = true;
-        Apartment apartment = new Apartment(id, city, street, area, floor, parking);
+        Apartment apartment = new Apartment(id, city, street, area, monthlyCost, floor, parking);
         apartmentCollection.addRealEstateToArrayList(apartment);
 
         //when
@@ -54,9 +56,10 @@ class RealEstateCollectionTest {
         int id = 1;
         String city = "Warszawa";
         String street = "Złota";
+        int monthlyCost = 1000;
         double area = 59.5;
         double gardenArea = 100;
-        House house = new House(id, city, street, area, gardenArea);
+        House house = new House(id, city, street, area, monthlyCost, gardenArea);
 
         //when
         houseCollection.addRealEstateToArrayList(house);
@@ -71,9 +74,10 @@ class RealEstateCollectionTest {
         int id = 1;
         String city = "Warszawa";
         String street = "Złota";
+        int monthlyCost = 1000;
         double area = 59.5;
         double gardenArea = 100;
-        House house = new House(id, city, street, area, gardenArea);
+        House house = new House(id, city, street, area, monthlyCost, gardenArea);
         houseCollection.addRealEstateToArrayList(house);
 
         //when

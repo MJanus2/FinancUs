@@ -36,6 +36,9 @@ public class RealEstatePresenter {
         System.out.println("Podaj metraż: ");
         int area = scanner.nextInt();
 
+        System.out.println("Podaj miesięczny koszt obsługi: ");
+        int monthlyCost = scanner.nextInt();
+
         System.out.println("Podaj piętro: ");
         int floor = scanner.nextInt();
 
@@ -50,7 +53,7 @@ public class RealEstatePresenter {
         }
 
 
-        if(realEstateService.addRealEstate(id, city, street, area, floor, parking)){
+        if(realEstateService.addRealEstate(id, city, street, area, monthlyCost, floor, parking)){
             System.out.println("Dodano nieruchomość");
         } else {
             System.out.println("Podano błędne dane");

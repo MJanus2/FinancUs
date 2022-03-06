@@ -13,23 +13,21 @@ public class RealEstateService {
     }
 
 
-    public boolean addRealEstate(int id, String city, String street, double area,
+    public boolean addRealEstate(int id, String city, String street, double area, int monthlyCost,
                                  double gardenArea) {
         boolean isValid = isValid(id, city, street, area);
         if (isValid) {
-            House house = new House(id, city, street, area,
-                    gardenArea);
+            House house = new House(id, city, street, area, monthlyCost, gardenArea);
             houseCollection.addRealEstateToArrayList(house);
         }
         return isValid;
     }
 
-    public boolean addRealEstate(int id, String city, String street, double area,
+    public boolean addRealEstate(int id, String city, String street, double area, int monthlyCost,
                                  int floor, boolean parking) {
         boolean isValid = isValid(id, city, street, area) && RealEstateValidator.isFloorValid(floor);
         if (isValid) {
-            Apartment apartment = new Apartment(id, city, street, area,
-                    floor, parking);
+            Apartment apartment = new Apartment(id, city, street, area, monthlyCost, floor, parking);
             apartmentCollection.addRealEstateToArrayList(apartment);
         }
         return isValid;
