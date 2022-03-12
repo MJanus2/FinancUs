@@ -9,7 +9,7 @@ interface RealEstateCollection<T> {
     void deleteRealEstate(int id);
 }
 
-class ApartmentCollection implements RealEstateCollection<Apartment> {
+public class ApartmentCollection implements RealEstateCollection<Apartment> {
     ArrayList<Apartment> apartments = new ArrayList<>();
 
     @Override
@@ -28,7 +28,7 @@ class ApartmentCollection implements RealEstateCollection<Apartment> {
     }
 }
 
-class HouseCollection implements RealEstateCollection<House> {
+public class HouseCollection implements RealEstateCollection<House> {
     ArrayList<House> houses = new ArrayList<>();
 
     @Override

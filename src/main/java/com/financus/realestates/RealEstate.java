@@ -20,6 +20,9 @@ public abstract class RealEstate {
         return id;
     }
 
+    public int getMonthlyCost() {
+        return monthlyCost;
+    }
 }
 
 class Apartment extends RealEstate {
