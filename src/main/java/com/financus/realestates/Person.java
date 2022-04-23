@@ -1,11 +1,18 @@
 package com.financus.realestates;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
+@Entity
+@Table(name = "People")
 public class Person {
     enum Gender{
         MĘŻCZYZNA, KOBIETA;
     }
     private int id;
+    @Column(name = "monthly_salary")
     private int monthlySalary;
+    @Column(name = "monthly_living_costs")
     private int monthlyLivingCosts;
     private Gender gender;
 
