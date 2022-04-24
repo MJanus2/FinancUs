@@ -1,26 +1,22 @@
 package com.financus;
 
 import com.financus.jdbc.DBconnector;
+import com.financus.securities.NBPCurrencyAPI;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import yahoofinance.Stock;
-import yahoofinance.YahooFinance;
 
 import java.io.IOException;
-import java.math.BigDecimal;
+import java.net.URISyntaxException;
 
 public class App {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, URISyntaxException, InterruptedException {
         DBconnector.connect();
+
         SessionFactory sessionFactory =
                 new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
 
-        Stock stock = YahooFinance.get("ETFBS80TR.WA");
-        BigDecimal price = stock.getQuote(true).getPrice();
-        BigDecimal change = stock.getQuote().getChangeInPercent();
-        BigDecimal peg = stock.getStats().getPeg();
-        BigDecimal dividend = stock.getDividend().getAnnualYieldPercent();
-        stock.print();
-        System.out.println(price);
+        NBPCurrencyAPI nbpCurrencyAPI = new NBPCurrencyAPI();
+        System.out.println(nbpCurrencyAPI.getCurrencyRateFromASpecificDate("2022-04-04"));
+
     }
 }
