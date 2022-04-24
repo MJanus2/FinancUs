@@ -67,7 +67,7 @@ public abstract class Security {
     @Entity
     @Table(name = "Shares")
     class Share extends Security {
-        char classOfShare;
+        private char classOfShare;
 
         public Share(TypeOfSecurity typeOfSecurity, String ISIN, String name, String exchange, char classOfShare) {
             super(typeOfSecurity, ISIN, name, exchange);
@@ -78,7 +78,7 @@ public abstract class Security {
     @Entity
     @Table(name = "Bonds")
     class Bond extends Security {
-        float rate;
+        private float rate;
 
         public Bond(TypeOfSecurity typeOfSecurity, String ISIN, String name, String exchange, float rate) {
             super(typeOfSecurity, ISIN, name, exchange);

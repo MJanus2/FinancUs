@@ -32,8 +32,8 @@ public abstract class RealEstate {
 @Entity
 @Table(name = "Apartments")
 class Apartment extends RealEstate {
-    int floor;
-    boolean parking;
+    private int floor;
+    private boolean parking;
 
     public Apartment(int id, String city, String street, double area, int monthlyCost, int floor, boolean parking) {
         super(id, city, street, area, monthlyCost);
@@ -59,7 +59,7 @@ class Apartment extends RealEstate {
 @Table(name = "Houses")
 class House extends RealEstate {
 
-    double gardenArea;
+    private double gardenArea;
 
     public House(int id, String city, String street, double area, int monthlyCost, double gardenArea) {
         super(id, city, street, area, monthlyCost);
