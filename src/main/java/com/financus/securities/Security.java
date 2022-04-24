@@ -1,13 +1,18 @@
 package com.financus.securities;
 
+import javax.persistence.*;
+
+@MappedSuperclass
 public abstract class Security {
 
-    private enum TypeOfSecurity {
+    protected enum TypeOfSecurity {
         SHARE, BOND, ETF;
     }
 
+    @Id
     protected String ISIN;
     protected String name;
+    @Column(name = "type_of_security")
     protected TypeOfSecurity typeOfSecurity;
     protected String exchange;
 
@@ -17,8 +22,9 @@ public abstract class Security {
         this.name = name;
         this.exchange = exchange;
     }
-
-
+}
+    @Entity
+    @Table(name = "Shares")
     class Share extends Security {
         char classOfShare;
 
@@ -28,6 +34,8 @@ public abstract class Security {
         }
     }
 
+    @Entity
+    @Table(name = "Bonds")
     class Bond extends Security {
         float rate;
 
@@ -38,7 +46,7 @@ public abstract class Security {
     }
 
 
-}
+
 
 
 

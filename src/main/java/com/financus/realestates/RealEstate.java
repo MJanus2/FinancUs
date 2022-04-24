@@ -1,11 +1,15 @@
 package com.financus.realestates;
 
-public abstract class RealEstate {
+import javax.persistence.*;
 
+@MappedSuperclass
+public abstract class RealEstate {
+    @Id
     protected int id;
     protected String city;
     protected String street;
     protected double area;
+    @Column(name = "monthly_cost")
     protected int monthlyCost;
 
     public RealEstate(int id, String city, String street, double area, int monthlyCost) {
@@ -25,6 +29,8 @@ public abstract class RealEstate {
     }
 }
 
+@Entity
+@Table(name = "Apartments")
 class Apartment extends RealEstate {
     int floor;
     boolean parking;
@@ -49,6 +55,8 @@ class Apartment extends RealEstate {
     }
 }
 
+@Entity
+@Table(name = "Houses")
 class House extends RealEstate {
 
     double gardenArea;
