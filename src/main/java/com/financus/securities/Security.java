@@ -11,6 +11,7 @@ public abstract class Security {
 
     @Id
     protected String ISIN;
+    protected String ticker;
     protected String name;
     @Column(name = "type_of_security")
     protected TypeOfSecurity typeOfSecurity;
@@ -20,6 +21,46 @@ public abstract class Security {
         this.typeOfSecurity = typeOfSecurity;
         this.ISIN = ISIN;
         this.name = name;
+        this.exchange = exchange;
+    }
+
+    public String getISIN() {
+        return ISIN;
+    }
+
+    public void setISIN(String ISIN) {
+        this.ISIN = ISIN;
+    }
+
+    public String getTicker() {
+        return ticker;
+    }
+
+    public void setTicker(String ticker) {
+        this.ticker = ticker;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public TypeOfSecurity getTypeOfSecurity() {
+        return typeOfSecurity;
+    }
+
+    public void setTypeOfSecurity(TypeOfSecurity typeOfSecurity) {
+        this.typeOfSecurity = typeOfSecurity;
+    }
+
+    public String getExchange() {
+        return exchange;
+    }
+
+    public void setExchange(String exchange) {
         this.exchange = exchange;
     }
 }
