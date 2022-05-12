@@ -1,9 +1,9 @@
-package com.financus.realestates;
+package com.financus.finance.realestates;
 
 //public class RealEstatePeriodsCollection {
 //
 //
-//    com.financus.realestates.ExcelDataDownloader excelDataDownloader = new ExcelDataDownloader();
+//    com.financus.finance.realestates.ExcelDataDownloader excelDataDownloader = new ExcelDataDownloader();
 //    public List<RealEstatePeriods> createRealEstatePeriods(String city) throws IOException {
 //        List<RealEstatePeriods> realEstatePeriodsList = new ArrayList<>();
 //        for(int i = 0; i < excelDataDownloader.createCityPeriods(2).size(); i++){

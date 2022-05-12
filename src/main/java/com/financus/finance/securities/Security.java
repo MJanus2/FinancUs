@@ -1,4 +1,4 @@
-package com.financus.securities;
+package com.financus.finance.securities;
 
 import javax.persistence.*;
 
