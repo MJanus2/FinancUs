@@ -15,7 +15,7 @@ public class App {
 //        System.out.println(nbpCurrencyAPI.getCurrencyRateFromASpecificDate("2022-04-04"));
 
 
-        //com.financus.realestates.ExcelDataDownloader excelDataDownloader = new ExcelDataDownloader();
+        com.financus.realestates.ExcelDataDownloader excelDataDownloader = new ExcelDataDownloader();
         //System.out.println(excelDataDownloader.getColumnIndexForCity(excelDataDownloader.chooseFilePath(), 2, "Łódź"));
 
 //        for(Double prices : excelDataDownloader.createCityPrices(excelDataDownloader.chooseFilePath(),
