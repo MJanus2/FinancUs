@@ -1,4 +1,4 @@
-package com.financus.algorithms;
+package com.financus.finance.algorithms;
 
 
 public class LiquidityAlgorithms {

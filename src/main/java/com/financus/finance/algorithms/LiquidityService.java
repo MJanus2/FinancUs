@@ -1,6 +1,6 @@
-package com.financus.algorithms;
+package com.financus.finance.algorithms;
 
-import com.financus.realestates.*;
+import com.financus.finance.realestates.*;
 
 import java.util.ArrayList;
 
