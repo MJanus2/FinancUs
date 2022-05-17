@@ -1,7 +1,7 @@
 package com.financus;
 
-import goals.MysqlConnect;
-import goals.QueriesGoals;
+import pl.FinancUs.goals.DBconnection.MysqlConnect;
+import pl.FinancUs.goals.DBconnection.QueriesGoals;
 
 import java.io.IOException;
 import java.net.URISyntaxException;

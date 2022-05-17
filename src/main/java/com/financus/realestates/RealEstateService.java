@@ -3,7 +3,7 @@ package com.financus.realestates;
 import java.util.ArrayList;
 
 
-public class RealEstateService {
+public class git RealEstateService {
     ApartmentCollection apartmentCollection = new ApartmentCollection();
     HouseCollection houseCollection = new HouseCollection();
 

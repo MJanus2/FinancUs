@@ -1,4 +1,4 @@
-package goals;
+package pl.FinancUs.goals.DBconnection;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
