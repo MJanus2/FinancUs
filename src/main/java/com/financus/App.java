@@ -1,11 +1,28 @@
 package com.financus;
 
+import goals.MysqlConnect;
+import goals.QueriesGoals;
+
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.ParseException;
 
 public class App {
-    public static void main(String[] args) throws IOException, URISyntaxException, InterruptedException, ParseException {
+    public static void main(String[] args) throws IOException, URISyntaxException, InterruptedException, ParseException, SQLException {
+        MysqlConnect.connect();
+        ResultSet resultSet = QueriesGoals.executeSelect("SELECT * FROM goal");
+        try{
+            while (resultSet.next()){
+                System.out.println("Goal title: " + resultSet.getString("Title"));
+
+            }
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+
 //        DBconnector.connect();
 //        SessionFactory sessionFactory =
 //                new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
