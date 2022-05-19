@@ -15,9 +15,9 @@
         <!-- Validate the database schema on startup -->
         <property name="hbm2ddl.auto">update</property>
         <!-- Names the annotated entity class -->
-        <mapping class="com.financus.realestates.Apartment"/>
-        <mapping class="com.financus.realestates.House"/>
-        <mapping class="com.financus.securities.Bond"/>
-        <mapping class="com.financus.securities.Share"/>
+        <mapping class="com.financus.finance.realestates.Apartment"/>
+        <mapping class="com.financus.finance.realestates.House"/>
+        <mapping class="com.financus.finance.securities.Bond"/>
+        <mapping class="com.financus.finance.securities.Share"/>
     </session-factory>
 </hibernate-configuration>
