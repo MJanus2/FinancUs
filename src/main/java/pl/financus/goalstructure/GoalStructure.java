@@ -1,4 +1,4 @@
-package pl.FinancUs.goalstructure;
+package pl.financus.goalstructure;
 
 import lombok.NoArgsConstructor;
 

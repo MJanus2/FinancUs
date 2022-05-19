@@ -1,4 +1,4 @@
-package pl.FinancUs.goals.DBconnection;
+package pl.financus.goals.DBconnection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
