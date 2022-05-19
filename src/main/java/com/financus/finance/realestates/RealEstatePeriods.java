@@ -1,4 +1,4 @@
-package com.financus.realestates;
+package com.financus.finance.realestates;
 
 import java.util.Date;
 
