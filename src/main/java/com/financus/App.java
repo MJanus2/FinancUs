@@ -1,8 +1,8 @@
 package com.financus;
 
-import pl.FinancUs.goals.DBconnection.MysqlConnect;
-import pl.FinancUs.goals.DBconnection.QueriesGoals;
-import pl.FinancUs.goalstructure.GoalStructure;
+import pl.financus.goals.DBconnection.MysqlConnect;
+import pl.financus.goals.DBconnection.QueriesGoals;
+import pl.financus.goalstructure.GoalStructure;
 import weather.WeatherTaker;
 
 import java.io.IOException;
