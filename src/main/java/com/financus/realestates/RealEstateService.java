@@ -1,9 +1,9 @@
-package com.financus.realestates;
+package com.financus.finance.realestates;
 
 import java.util.ArrayList;
 
 
-public class RealEstateService{
+public class RealEstateService {
     ApartmentCollection apartmentCollection = new ApartmentCollection();
     HouseCollection houseCollection = new HouseCollection();
 
