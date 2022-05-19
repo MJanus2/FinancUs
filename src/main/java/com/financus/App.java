@@ -1,11 +1,45 @@
 package com.financus;
 
+import pl.FinancUs.goals.DBconnection.MysqlConnect;
+import pl.FinancUs.goals.DBconnection.QueriesGoals;
+import pl.FinancUs.goalstructure.GoalStructure;
+import weather.WeatherTaker;
+
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.ParseException;
 
 public class App {
-    public static void main(String[] args) throws IOException, URISyntaxException, InterruptedException, ParseException {
+    public static void main(String[] args) throws IOException, URISyntaxException, InterruptedException, ParseException, SQLException {
+        MysqlConnect.connect();
+        ResultSet resultSet = QueriesGoals.executeSelect("SELECT * FROM goal");
+        try{
+            while (resultSet.next()){
+                System.out.println("Goal title: " + resultSet.getString("Title"));
+
+            }
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+
+        final GoalStructure goal= new GoalStructure.Builder()
+                .withGoalID(1)
+                .withGoalTitle("Dopracować projekt")
+                .build();
+
+        System.out.println(goal);
+
+        WeatherTaker weatherTaker = new WeatherTaker();
+        weatherTaker.takeWeather("Warsaw");
+        weatherTaker.takeWeather("London");
+
+
+            }
+        }
+
 //        DBconnector.connect();
 //        SessionFactory sessionFactory =
 //                new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
@@ -27,5 +61,4 @@ public class App {
 
 //         excelDataDownloader.showDates();
 
-    }
-}
+
