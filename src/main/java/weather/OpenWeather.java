@@ -15,6 +15,15 @@ public class OpenWeather {
     @SerializedName("wind")
     private WindDetails windDetails;
 
+
+    @Override
+    public String toString() {
+        return "OpenWeather{" +
+                "name='" + name + '\'' +
+                ", weatherDetails=" + weatherDetails +
+                ", windDetails=" + windDetails +
+                '}';
+    }
 }
 
 @AllArgsConstructor

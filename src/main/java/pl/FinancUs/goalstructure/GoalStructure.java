@@ -21,7 +21,6 @@ public class GoalStructure {
     private List<StepStructure> stepStructureList;
 
 
-
     private GoalStructure(final int goalID, final String goalTitle, final LocalDateTime dueDate, final String goalNotes, final List<StepStructure> stepStructureList) {
         this.goalID = goalID;
         this.goalTitle = goalTitle;
@@ -46,9 +45,7 @@ public class GoalStructure {
         this.goalTitle = goalTitle;
     }
 
-    public LocalDateTime getDueDate() {
-        return dueDate;
-    }
+    public LocalDateTime getDueDate() { return dueDate;}
 
     public void setDueDate(final LocalDateTime dueDate) {
         this.dueDate = dueDate;
@@ -80,7 +77,7 @@ public class GoalStructure {
                 ;
     }
 
-    public static class Builder{
+    public static class Builder {
         private int goalID;
         private String goalTitle;
         private LocalDateTime dueDate;
@@ -91,7 +88,7 @@ public class GoalStructure {
         //builder methods
 
 
-        public Builder withgoalID(final int goalID) {
+        public Builder withGoalID(final int goalID) {
             this.goalID = goalID;
             return this;
         }
@@ -121,8 +118,8 @@ public class GoalStructure {
 
         //builder of object GoalStructure
 
-        public GoalStructure build(){
-            return new GoalStructure(goalID,goalTitle,dueDate,goalNotes,stepStructureList);
+        public GoalStructure build() {
+            return new GoalStructure(goalID, goalTitle, dueDate, goalNotes, stepStructureList);
         }
     }
 }

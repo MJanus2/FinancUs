@@ -3,6 +3,7 @@ package com.financus;
 import pl.FinancUs.goals.DBconnection.MysqlConnect;
 import pl.FinancUs.goals.DBconnection.QueriesGoals;
 import pl.FinancUs.goalstructure.GoalStructure;
+import weather.WeatherTaker;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -25,11 +26,17 @@ public class App {
         }
 
         final GoalStructure goal= new GoalStructure.Builder()
-                .withgoalID(1)
+                .withGoalID(1)
                 .withGoalTitle("Dopracować projekt")
                 .build();
 
         System.out.println(goal);
+
+        WeatherTaker weatherTaker = new WeatherTaker();
+        weatherTaker.takeWeather("Warsaw");
+        weatherTaker.takeWeather("London");
+
+
             }
         }
 

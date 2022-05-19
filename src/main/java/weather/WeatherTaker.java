@@ -10,18 +10,18 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class WeatherTaker {
-    public static void main(String[] args) throws URISyntaxException, IOException, InterruptedException {
+    public OpenWeather takeWeather(String cityName) throws URISyntaxException, IOException, InterruptedException {
         Gson gson = new Gson();
         HttpClient httpClient = HttpClient.newHttpClient();
         HttpRequest httpRequest = HttpRequest.newBuilder()
-                .uri(new URI("https://api.openweathermap.org/data/2.5/weather?q=Szczecin&appid=baa6ece140be0985d8bf8766fa381d1d&units=metric"))
+                .uri(new URI("https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=baa6ece140be0985d8bf8766fa381d1d&units=metric"))
                 .GET()
                 .build();
         HttpResponse<String> response = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
         OpenWeather openWeather = gson.fromJson(response.body(), OpenWeather.class);
         System.out.println(openWeather);
-
-
+return openWeather;
     }
+
 }
 
