@@ -4,7 +4,6 @@ public class GoalService {
 
     // add goal
      public void addGoal(){
-         GoalStructure goalStructure = new GoalStructure;
 
      }
     // add step
