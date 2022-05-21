@@ -1,18 +1,16 @@
 package com.financus;
 
-import pl.financus.goals.DBconnection.MysqlConnect;
-import pl.financus.goals.DBconnection.QueriesGoals;
-import pl.financus.goalstructure.GoalStructure;
-import weather.WeatherTaker;
-
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
 
 public class App {
     public static void main(String[] args) throws IOException, URISyntaxException, InterruptedException, ParseException, SQLException {
+
+
+/*
+// Kasia test code
         MysqlConnect.connect();
         ResultSet resultSet = QueriesGoals.executeSelect("SELECT * FROM goal");
         try{
@@ -40,25 +38,29 @@ public class App {
             }
         }
 
-//        DBconnector.connect();
-//        SessionFactory sessionFactory =
-//                new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
-//        NBPCurrencyAPI nbpCurrencyAPI = new NBPCurrencyAPI();
-//        System.out.println(nbpCurrencyAPI.getCurrencyRateFromASpecificDate("2022-04-04"));
+ */
+/*
+// Mateusz test code
 
-//        com.financus.finance.realestates.ExcelDataDownloader excelDataDownloader = new ExcelDataDownloader();
-//        System.out.println(excelDataDownloader.getColumnIndexForCity(excelDataDownloader.chooseFilePath(), 2, "Łódź"));
+    DBconnector.connect();
+    SessionFactory sessionFactory =
+          new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+    NBPCurrencyAPI nbpCurrencyAPI = new NBPCurrencyAPI();
+    System.out.println(nbpCurrencyAPI.getCurrencyRateFromASpecificDate("2022-04-04"));
+    com.financus.finance.realestates.ExcelDataDownloader excelDataDownloader = new ExcelDataDownloader();
+    System.out.println(excelDataDownloader.getColumnIndexForCity(excelDataDownloader.chooseFilePath(), 2, "Łódź"));
 
-//        for(Double prices : excelDataDownloader.createCityPrices(excelDataDownloader.chooseFilePath(),
-//                        excelDataDownloader.getAdditionalStream(), 2, "Łódź")){
-//            System.out.println(prices);
-//        }
-//
-//        for(String periods : excelDataDownloader.createCityPeriods
-//                (excelDataDownloader.chooseFilePath(), 2)){
-//            System.out.println(periods);
-//        }
+    for(Double prices : excelDataDownloader.createCityPrices(excelDataDownloader.chooseFilePath(),
+                       excelDataDownloader.getAdditionalStream(), 2, "Łódź")){
+       System.out.println(prices);
+    }
 
-//         excelDataDownloader.showDates();
+        (excelDataDownloader.chooseFilePath(), 2)){
+        System.out.println(periods);
+    }
 
+    excelDataDownloader.showDates();
 
+*/
+    }
+}
